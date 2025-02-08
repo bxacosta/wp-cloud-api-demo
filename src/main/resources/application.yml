@@ -1,0 +1,8 @@
+spring.application.name: wp-cloud-api
+
+facebook:
+  appId: ${FACEBOOK_APP_ID}
+  configId: ${FACEBOOK_CONFIG_ID}
+  appSecret: ${FACEBOOK_APP_SECRET}
+  callbackUrl: ${APP_URL}/callback
+  webhookToken: wp-notification
