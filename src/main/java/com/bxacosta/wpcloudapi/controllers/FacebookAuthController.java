@@ -40,6 +40,7 @@ public class FacebookAuthController {
 
         AccessToken accessToken = facebookAuthService.exchangeCodeForAccessToken(code);
 
+        log.info("Facebook access token: {}", accessToken);
         request.getSession().setAttribute("access_token", accessToken.getAccessToken());
 
         URL url = URI.create(state).toURL();
