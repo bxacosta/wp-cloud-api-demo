@@ -10,6 +10,7 @@ import com.restfb.types.DebugTokenInfo;
 import com.restfb.types.GranularScope;
 import com.restfb.types.whatsapp.WhatsAppBusinessAccount;
 import com.restfb.types.whatsapp.WhatsAppBusinessPhoneNumber;
+import com.restfb.types.whatsapp.WhatsAppMessageTemplate;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -50,5 +51,18 @@ public class WhatsAppBusinessService {
         List<WhatsAppBusinessPhoneNumber> phoneNumbers = new ArrayList<>();
         phoneNumberConnection.forEach(phoneNumbers::addAll);
         return phoneNumbers;
+    }
+
+    public List<WhatsAppMessageTemplate> getMessageTemplatesByWABAId(String accessToken, String wabaId) {
+        FacebookClient facebookClient = new DefaultFacebookClient(accessToken, Version.LATEST);
+
+        Connection<WhatsAppMessageTemplate> templateConnection = facebookClient.fetchConnection(
+                wabaId + "/message_templates",
+                WhatsAppMessageTemplate.class
+        );
+
+        List<WhatsAppMessageTemplate> templates = new ArrayList<>();
+        templateConnection.forEach(templates::addAll);
+        return templates;
     }
 }

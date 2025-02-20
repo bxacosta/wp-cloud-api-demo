@@ -3,6 +3,7 @@ package com.bxacosta.wpcloudapi.controllers;
 import com.bxacosta.wpcloudapi.services.WhatsAppBusinessService;
 import com.restfb.types.whatsapp.WhatsAppBusinessAccount;
 import com.restfb.types.whatsapp.WhatsAppBusinessPhoneNumber;
+import com.restfb.types.whatsapp.WhatsAppMessageTemplate;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -38,10 +39,15 @@ public class IndexController {
                 .flatMap(account -> whatsAppBusinessService.getPhoneNumbersByWABAId(accessToken, account.getId()).stream())
                 .toList();
 
+        List<WhatsAppMessageTemplate> templates = accounts.stream()
+                .flatMap(account -> whatsAppBusinessService.getMessageTemplatesByWABAId(accessToken, account.getId()).stream())
+                .toList();
+
         return ResponseEntity.ok(Map.of(
                 "status", "Connected",
                 "accounts", accounts,
-                "numbers", numbers
+                "numbers", numbers,
+                "templates", templates
         ));
     }
 }
