@@ -1,6 +1,5 @@
-package com.bxacosta.wpcloudapi.controllers;
+package com.bxacosta.wpcloudapi.auth;
 
-import com.bxacosta.wpcloudapi.auth.FacebookAuthService;
 import com.restfb.AccessToken;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
