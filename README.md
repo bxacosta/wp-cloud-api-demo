@@ -84,11 +84,9 @@ Use `.\gradlew.bat` instead if you are on Windows.
 
 ## Usage
 
-### Authentication Flow
-
-1. Navigate to `/login` to initiate the Facebook authentication flow
-2. After successful authentication, you will be redirected back to the application `/`
-3. The access token will be stored in the session
+1. Navigate to `/login` to initiate the Facebook authentication flow.
+2. After successful authentication, you will be redirected back to the application `/`.
+3. The access token will be stored in the session.
 
 ## API Endpoints
 
