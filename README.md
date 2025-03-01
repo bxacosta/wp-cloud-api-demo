@@ -5,8 +5,6 @@ the [WhatsApp Business Cloud API](https://developers.facebook.com/docs/whatsapp/
 through [Facebook's Graph API](https://developers.facebook.com/docs/graph-api/).
 using Spring Boot.
 
----
-
 ## Features
 
 - Uses [**restfb**](https://github.com/restfb/restfb) as
@@ -16,16 +14,12 @@ using Spring Boot.
 - Lists associated **WhatsApp Business Phone Numbers**.
 - Lists associated **WhatsApp Message Templates**.
 
----
-
 ## Technologies Used
 
 - Spring Boot 3.4
 - Java 21
 - Gradle
 - lombok
-
----
 
 ## Requirements
 
@@ -46,8 +40,6 @@ Check the official documentation for more details:
 - [Embedded Signup Implementation](https://developers.facebook.com/docs/whatsapp/embedded-signup/implementation)
 - [WhatsApp Business Management API](https://developers.facebook.com/docs/whatsapp/business-management-api/get-started)
 - [WhatsApp Business Platform Cloud API](https://developers.facebook.com/docs/whatsapp/cloud-api/overview)
-
----
 
 ## Setup
 
@@ -74,8 +66,6 @@ facebook:
 
 Make sure to replace the placeholder values with your actual Facebook application credentials.
 
----
-
 ## Building and Running
 
 ### Build the Application
@@ -92,8 +82,6 @@ Make sure to replace the placeholder values with your actual Facebook applicatio
 
 Use `.\gradlew.bat` instead if you are on Windows.
 
----
-
 ## Usage
 
 ### Authentication Flow
@@ -101,8 +89,6 @@ Use `.\gradlew.bat` instead if you are on Windows.
 1. Navigate to `/login` to initiate the Facebook authentication flow
 2. After successful authentication, you will be redirected back to the application `/`
 3. The access token will be stored in the session
-
----
 
 ## API Endpoints
 
@@ -118,8 +104,6 @@ Use `.\gradlew.bat` instead if you are on Windows.
 | Method | Endpoint | Description                                                                        |
 |--------|----------|------------------------------------------------------------------------------------|
 | `GET`  | `/`      | Lists associated WhatsApp Business accounts, phone numbers, and message templates. |
-
----
 
 ## License
 
