@@ -68,13 +68,13 @@ Make sure to replace the placeholder values with your actual Facebook applicatio
 
 ## Building and Running
 
-### Build the Application
+- Build the Application
 
 ```bash
 ./gradlew build
 ```
 
-### Run the Application
+-  Run the Application
 
 ```bash
 ./gradlew bootRun
