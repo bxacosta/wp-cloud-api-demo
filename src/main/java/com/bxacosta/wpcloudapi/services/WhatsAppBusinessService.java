@@ -116,4 +116,22 @@ public class WhatsAppBusinessService {
         if (!response.getBoolean("success", false))
             throw new IllegalStateException("Failed to register phone number with id: " + phoneNumberId);
     }
+
+    /**
+     * Subscribe an application to webhook on a WhatsApp Business Account (WABA), see
+     * <a href="https://developers.facebook.com/docs/graph-api/reference/whats-app-business-account/subscribed_apps/"
+     * WhatsApp Business Account Subscribed Apps </a>
+     *
+     * @param accessToken The access token used to authenticate the Facebook API.
+     * @param wabaId      The ID of the WhatsApp Business Account (WABA) to which the app should be subscribed.
+     * @throws IllegalStateException If the API returns an unsuccessful result.
+     */
+    public void subscribeAppToWABAWebhook(String accessToken, String wabaId) {
+        FacebookClient client = new DefaultFacebookClient(accessToken, Version.LATEST);
+
+        JsonObject response = client.publish(wabaId + "/subscribed_apps", JsonObject.class);
+
+        if (!response.getBoolean("success", false))
+            throw new IllegalStateException(String.format("Failed to subscribe app to WABA webhook. WABA ID: %s, Response: %s", wabaId, response));
+    }
 }
