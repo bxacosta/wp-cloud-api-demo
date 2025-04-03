@@ -120,7 +120,7 @@ public class WhatsAppBusinessService {
     /**
      * Subscribe an application to webhook on a WhatsApp Business Account (WABA), see
      * <a href="https://developers.facebook.com/docs/graph-api/reference/whats-app-business-account/subscribed_apps/"
-     * WhatsApp Business Account Subscribed Apps </a>
+     * WhatsApp Business Account Subscribed Apps</a>.
      *
      * @param accessToken The access token used to authenticate the Facebook API.
      * @param wabaId      The ID of the WhatsApp Business Account (WABA) to which the app should be subscribed.
